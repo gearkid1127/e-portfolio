@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   <script src="https://kit.fontawesome.com/0bf15b36bc.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "KnLV30gORUMdbecKI",
+      });
+   })();
+</script>
+</head>
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)"> 
+        <nav>
+            <figure>
+                <img src="./assets/Untitled (1).png" class="logo-personal" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link click" onclick="toggleModal()"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a></li>
+                <li class="nav__link click"><a href="#projects" class="nav__link--anchor link__hover-effect link__hover-effect--black">Projects</a></li>
+                <li class="nav__link click" onclick="toggleModal()"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a></li>
+                <li class="nav__link click" onclick="toggleTheme()"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"><i class="fa-solid fa-circle-half-stroke"></i></a></li>
+            </ul>
+        </nav>
+        <header>
+            <div class="header__content">
+                <div class="header__text">
+                    <h1 class="title">Hey</h1>
+                    <h1 class="title__secondary"><span class="purple">I'm Kevin</span></h1>
+                    <p class="header__para">I'm a dedicated <span class="purple">front-end developer.</span> <br>Here's a bit more <span class="purple click" onclick="toggleModal()">about me</span></p>
+                    <div class="social__list">
+                        <a href="#" class="social__link click"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social__link click"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" target="_blank" class="social__link click"><i class="fa-solid fa-file-pdf"></i></a>
+                    </div>
+                </div>
+                <div class="header__image">
+                    <img src="./assets/anime-me.png" alt="Profile image">
+                </div>
+            </div>
+        </header>
+        <a href="#"><button class="mail__btn click" onclick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button></a>
+        <a href="#projects" class="scroll"><div class="scroll__icon click"></div></a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">More about me </h3>
+                <h4 class="modal__subtitle modal__subtitle--about">
+                  <span class="purple">Frontend Software Engineer.</span>
+                </h4>
+                <p class="modal__para"> I'm a 31 year old frontend software engineer with a <span class="purple">passion for delivering a great product that people will enjoy using.</span> <br> I currently work on extremely challenging engineering problems and love to find <span class="purple">innovative solutions.</span></p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img src="/assets/icons8-html-144.png" class="modal__language--img">
+                        <figcaption class="modal__language--caption">HTML</figcaption>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="/assets/icons8-css-144.png" class="modal__language--img">
+                        <figcaption class="modal__language--caption">CSS</figcaption>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="/assets/icons8-javascript-144.png" class="modal__language--img">
+                        <figcaption class="modal__language--caption">Javascript</figcaption>                        
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="modal__language--img">
+                        <figcaption class="modal__language--caption">Tailwind</figcaption>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="modal__language--img">
+                        <figcaption class="modal__language--caption">React</figcaption>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" class="modal__language--img">
+                        <figcaption class="modal__language--caption">Next.js</figcaption>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" class="modal__language--img">
+                        <figcaption class="modal__language--caption">Typescript</figcaption>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" class="modal__language--img">
+                        <figcaption class="modal__language--caption">Vite</figcaption>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" class="modal__language--img">
+                        <figcaption class="modal__language--caption">Redux</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-xmark modal__exit" onclick="toggleModal()"></i>   
+                <h3 class="modal__title modal__title--contact">Get in touch</h3>
+                <h4 class="modal__subtitle modal__subtitle--contact">
+                    My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                </h4>
+                <form  id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" type="text"  name="user_name" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label" for="email">Email</label>
+                        <input type="email" class="input" name="user_email" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label" for="message">Message</label>
+                        <textarea class="input" name="message" rows="4" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-spinner fa-spin fa-3x loading__icon"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    <h3 class="success__message">Thanks for the message. Looking forward to getting in touch!</h3>
+                     <i class="fa-solid fa-circle-check fa-3x success__icon"></i>
+                </div>
+            </div>
+            
+        </div>
+        <img src="./assets/circle.svg" class="shape shape--0">
+        <img src="./assets/semi circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/circle.svg" class="shape shape--3">
+        <img src="./assets/triangle.svg" class="shape shape--4">
+        <img src="./assets/semi circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/triangle.svg" class="shape shape--7">
+        <img src="./assets/circle.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row projects__row">
+                <h1 class="section__title">Here are some of my <span class="purple">projects</span></h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/vercel-thumb-3.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Skinstric.ai 
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    AI powered skincare recommendation app (Next.js, Typescript, OpenAI API, CSS, HTML)
+                                </h4>
+                                <p class="project__description--para">
+                                    An AI powered skincare recommendation web application that provides personalized skincare routines based on user input. Built with Next.js and Typescript, it leverages the OpenAI API to generate tailored recommendations.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/gearkid1127/skinstric-internship.git" class="project__description--link click"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://skinstric-internship-wine.vercel.app/" class="project__description--link click"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/grocery-optimizer-seven-vercel-app-1024x768desktop-6c252e.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Grocery Optimizer
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    An app for optimizing grocery shopping (Next.js, Tailwind CSS, Typescript, HTML)
+                                </h4>
+                                <p class="project__description--para">
+                                    A shopping list app that helps you find the best grocery store to save you money. Built with Next.js, Tailwind CSS, and Typescript.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/gearkid1127/grocery-optimizer.git" class="project__description--link click"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://grocery-optimizer-seven.vercel.app/" class="project__description--link click"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/summarist-six-vercel-app-1024x768desktop-e89af3.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Summarist
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    A library book summarization app (Next.js, Stripe, Firebase, Typescript, , HTML, CSS, Redux)
+                                </h4>
+                                <p class="project__description--para">
+                                    A web application that provides summaries of real books to help users quickly understand the content. Built with Next.js, Stripe for payments, Firebase for backend services, Typescript, and Redux for state management. Users can log in, create accounts, subscribe and pay for access to premium books and more.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/gearkid1127/Summarist.git" class="project__description--link click"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://summarist-six.vercel.app/" class="project__description--link click"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/ultraverse-nftmarketplace-vercel-app-1024x768desktop-e8299e.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Ultraverse
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    An NFT marketplace (React, AOS, HTML, CSS)
+                                </h4>
+                                <p class="project__description--para">
+                                    An NFT marketplace where users can buy, sell, and trade digital assets. Built with React.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/gearkid1127/kevin-internship.git" class="project__description--link click"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://ultraverse-nftmarketplace.vercel.app/" class="project__description--link click"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/anime-crib-vercel-app-1024x768desktop-ac77f1.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Anime Crib
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    An anime database (React, Vite, HTML, CSS)
+                                </h4>
+                                <p class="project__description--para">
+                                    An anime database where users can browse and search for anime titles. Built with React and Vite.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/gearkid1127/Anime-Crib-React.git" class="project__description--link click"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://anime-crib.vercel.app/" class="project__description--link click"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/library-gamma-mauve-vercel-app-1024x768desktop-5f91b2.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Library
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    An online book store ( Next.js, HTML, CSS)
+                                </h4>
+                                <p class="project__description--para">
+                                    An online book store where users can browse and purchase books. Built with Next.js.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/gearkid1127/library-react.git" class="project__description--link click"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://library-gamma-mauve.vercel.app/#/" class="project__description--link click"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+            <figure>
+                <img src="./assets/Untitled (1).png" class="logo-personal footer__logo">
+            </figure>
+            <div class="footer__social--list">
+                <a href="https://www.linkedin.com/in/kevinschmidt/" class="footer__social--link link__hover-effect footer__hover-effect--white">Linkedin</a>
+                <a href="https://github.com/gearkid1127" class="footer__social--link link__hover-effect footer__hover-effect--white">Github</a>
+                <a href="https://www.kevinschmidt.com/resume.pdf" class="footer__social--link link__hover-effect footer__hover-effect--white">Resume</a>
+                <a href="#" onclick="toggleModal()" class="footer__social--link link__hover-effect footer__hover-effect--white">Email</a>
+            </div>
+            <p class="footer__copyright">© 2025 Kevin C Riley. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
