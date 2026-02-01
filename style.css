@@ -209,6 +209,7 @@ header{
     max-width: 1200px;
     padding: 0 30px;
     z-index: 2;
+    margin-top: 50px;
 }
 
 .header__content {
