@@ -802,6 +802,23 @@ SHAPES
     max-width: 300px;
 }
 
+header {
+    top: 55%;
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.title__secondary {
+    font-size: 3rem;
+}
+
+.header__para {
+    font-size: 20px;
+}
+
 }
 
 /* small phones */
