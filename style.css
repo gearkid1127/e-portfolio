@@ -586,6 +586,10 @@ Projects
 
 .project {
     margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 
